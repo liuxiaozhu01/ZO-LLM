@@ -583,10 +583,10 @@ class OurTrainer(Trainer):
                 for device_id in range(torch.cuda.device_count()):
                     # this is not accurate since max memory does not happen simultaneously across all devices
                     max_memory_allocated += torch.cuda.max_memory_allocated(device_id)
-                self.log({"peak_mem": max_memory_allocated / 1024 ** 3,
-                          "step_consumption": train_step_duration * 1000})
-                wandb.log({"peak_mem": max_memory_allocated / 1024 ** 3,
-                           "step_consumption": train_step_duration * 1000})
+                # self.log({"peak_mem": max_memory_allocated / 1024 ** 3,
+                #           "step_consumption": train_step_duration * 1000})
+                # wandb.log({"peak_mem": max_memory_allocated / 1024 ** 3,
+                #            "step_consumption": train_step_duration * 1000})
 
             if step < 0:
                 # Why would this happen? I don't know, but let's be safe.

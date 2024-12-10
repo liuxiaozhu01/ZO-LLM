@@ -254,7 +254,7 @@ class Framework:
         if "opt" in self.args.model_name:
             tokenizer.bos_token_id = 0
 
-        if ("llama" in self.args.model_name) or ("mistral" in self.args.model_name.lower()):
+        if ("llama" in self.args.model_name.lower()) or ("mistral" in self.args.model_name.lower()):
             # LLaMA padding token
             tokenizer.pad_token_id = 0  # technically <unk>
 
